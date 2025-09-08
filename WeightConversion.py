@@ -1,11 +1,23 @@
 # 在这个文件下编写代码，题目具体要求见README.md文件
 #千克与英镑重量转换
-ZHstr=input("请输入带有单位要转换的质量：")
-if ZHstr[-2] in ['k'] or ZHstr[-2] in ['千'] or ZHstr[-2] in ['公']:
-    R = (eval (ZHstr[0:-2]) *2.2046 )
-    print("对应的英制重量为{:.3f}英镑".format(R))
-elif ZHstr[-2] in ['p'] or ZHstr[-2] in ['英']:
-    M = (eval (ZHstr[0:-2] /2.2046 ))
-    print("对应的公制重量为{:.3f}公斤".format(M))
-else:
-    print("输入的格式错误")
+def main():
+    s = input().strip()
+    unit = s[-2:]
+    num_str = s[:-2]
+    try:
+        value = float(num_str)
+    except:
+        print("输入格式错误")
+        return
+
+    if unit == 'kg':
+        result = value * 2.2046
+        print(f"对应的英制重量为{result:.3f}磅")
+    elif unit == 'pd':
+        result = value / 2.2046
+        print(f"对应的公制重量为{result:.3f}公斤")
+    else:
+        print("单位输入错误，请输入kg或pd")
+
+if __name__ == "__main__":
+    main()
