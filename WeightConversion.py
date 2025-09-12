@@ -1,7 +1,7 @@
 # 在这个文件下编写代码，题目具体要求见README.md文件
 #千克与英镑重量转换
 
-ZHstr=input("请输入带有单位要转换的质量：")
+ZHstr=input("")
 
 if ZHstr[-2] in ['k'] or ZHstr[-2] in ['千'] or ZHstr[-2] in ['公']:
     R = (eval (ZHstr[0:-2]) *2.2046 )
